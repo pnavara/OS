@@ -4,7 +4,6 @@
 
 int fileParse(FILE* destination, FILE* decomp, char fName[])
 {
-
     if (destination == NULL)
     {
         return -1;
