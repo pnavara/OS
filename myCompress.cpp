@@ -1,3 +1,8 @@
+// The purpose of this program is to take a file of characters (1's and 0's) and
+// compress them if the sequence of 1's are greater than or equal to 16, and the
+// same goes for the 0 characters. The input is a text file and the output is a
+// destination text file.
+
 #include <iostream>
 #include <fstream>
 #include <string>
