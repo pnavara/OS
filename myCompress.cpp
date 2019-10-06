@@ -73,7 +73,7 @@ int compress(int argc, char *argv[]) {
                 textString += currChar;
             }
 
-            // Nothing to compress and writes the string into appended file
+            // Nothing to compress and writes string into appended file
             else {
                 destFile << textString;
                 textString.clear();
@@ -98,7 +98,7 @@ int compress(int argc, char *argv[]) {
                 textString += currChar;
             }
 
-            // Nothing to compress
+            // Nothing to compress, text String to destination file
             else {
                 destFile << textString;
                 textString.clear();
@@ -115,7 +115,7 @@ int compress(int argc, char *argv[]) {
 
 int main(int argc, char *argv[]) {
     if (argc != 3) {
-        cout << "Usage:./program fileSource fileDestination\n";
+        // arguments not equal to 3
     } else {
     compress(argc, argv);
     }
