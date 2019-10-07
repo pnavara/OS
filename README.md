@@ -1,6 +1,6 @@
 # OS
 Group Names:
-Pabasara Navaratne
-Alexandra Strong
-Christopher Ortiz
+Pabasara Navaratne \n
+Alexandra Strong \n
+Christopher Ortiz \n
 
