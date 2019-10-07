@@ -57,7 +57,7 @@ int fileParse(FILE* destination, FILE* decomp, char fName[])
                     {
                         for ( int k = 0; k < var; k++)
                         {
-                            fprintf(varomp, "%s", "0");
+                            fprintf(decomp, "%s", "0");
                         }
                     }
 
