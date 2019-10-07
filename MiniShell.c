@@ -7,7 +7,7 @@
 
 int main()
 {
-    //stroes the entered command
+    //stores the entered command
     char command[MAX_SIZE];
 
     //stores pid
@@ -25,12 +25,10 @@ int main()
             *newLine = '\0';
 
         argv[0] = command;
-        
         argv[1] = NULL; //stop array pointer that are NULL
 
         if (strcmp(command, "exit") != 0)
 	{
-
             //fork the child process
             pid = fork();
 
