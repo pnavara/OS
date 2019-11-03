@@ -2,7 +2,7 @@ Problem 1: Bounded-buffer Producer/Consumer problem:
 ...
 
 Excecution:
-./
+This allows the user to either create an item or remove an item. if an item hasn't been created then a messaged will show up saying that there is no item inside the buffer and vise versa for the consumer.
 
 --------------------------------------------------------------
 Problem 2: Mother Hubbard (children, mother, father):
