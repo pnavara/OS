@@ -16,9 +16,12 @@ Excecution:
 
 --------------------------------------------------------------
 Problem 3: Airline Passengers:
-...
+The purpose of this program is take passengers through
+an airline process and ensure they are all seated in
+the end. This is done using multiple threads for each
+the passengers and the baggage, security, and boarding.
 
 Excecution:
-./
+./airline <passengers> <baggage handlers> <security screeners> <flight attendants>
 
 --------------------------------------------------------------
