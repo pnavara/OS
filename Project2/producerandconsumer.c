@@ -13,11 +13,12 @@ int main (){
     void producer();
     void consumer();
 
-    //these tell the operation to either wait or proceed with the task
-    int wait(int);
-	int signal(int);
+    //these tell the operation to either wait or proceed with the task. Also they are they act like
+    //the semaphores wait and signal
+    int sem_wait(int);
+	int sem_signal(int);
 
-    printf("\n1.Producer\n2.Consumer\n3.Exit");
+    printf("\n1.Produce a item\n2.Consume a item\n3.Exit");
 	while(1)
 	{
 		printf("\n Pick one:");
@@ -43,30 +44,30 @@ int main (){
 	return 0;
 }
  
-int wait(int s)
+int sem_wait(int s)
 {
 	return (--s);
 }
  
-int signal(int s)
+int sem_signal(int s)
 {
 	return(++s);
 }
-
+// This is the producer function where creates a item and increments it so it can keep tabs on how many it has created.
     void producer(){
-	mutex = wait(mutex);
-	maximun = signal(maximun);
-	minimum = wait(minimum);
+	mutex = sem_wait(mutex);
+	maximun = sem_signal(maximun);
+	minimum = sem_wait(minimum);
 	A++;
-	printf("\nProducer produces the item %d",A);
-	mutex = signal(mutex);
+	printf("\nitem is produced %d",A);
+	mutex = sem_signal(mutex);
 }
-
+// This is the consumer function where it consumes the items and decrements the total amount of inside the buffer size
     void consumer(){
-	mutex = wait(mutex);
-	maximun = wait(maximun);
-	minimum = signal(minimum);
-	printf("\nConsumer consumes item %d",A);
+	mutex = sem_wait(mutex);
+	maximun = sem_wait(maximun);
+	minimum = sem_signal(minimum);
+	printf("\nitem is consumed %d",A);
 	A--;
-	mutex = signal(mutex);
+	mutex = sem_signal(mutex);
 }
