@@ -1,13 +1,13 @@
 #include<stdio.h>
 #include<stdlib.h>
-// The full and the empty acts as the buffer sizes. A is the initial value and the Mutex allows
+// The maximun and the minimum acts as the buffer sizes. A is the initial value and the Mutex allows
 // one tread or option to go through
 int mutex=1;
 int maximun=0;
 int minimum=3;
 int A=0;
 
-int main(){
+int main (){
     //this n int is going to be the user input of what he wants to do
     int n;
     void producer();
@@ -24,15 +24,15 @@ int main(){
 		scanf("%d",&n);
 		switch(n)
 		{
-			case 1:	if((mutex==1)&&(empty!=0))
+			case 1:	if((mutex==1)&&(minimum!=0))
 						producer();
 					else
-						printf("Buffer is full!!");
+						printf("Buffer is at max capacity!!");
 					break;
-			case 2:	if((mutex==1)&&(full!=0))
+			case 2:	if((mutex==1)&&(maximun!=0))
 						consumer();
 					else
-						printf("Buffer is empty!!");
+						printf("Buffer is at the lowest!!");
 					break;
 			case 3:
 					exit(0);
@@ -55,18 +55,18 @@ int signal(int s)
 
     void producer(){
 	mutex = wait(mutex);
-	full = signal(full);
-	empty = wait(empty);
-	x++;
-	printf("\nProducer produces the item %d",x);
+	maximun = signal(maximun);
+	minimum = wait(minimum);
+	A++;
+	printf("\nProducer produces the item %d",A);
 	mutex = signal(mutex);
 }
 
     void consumer(){
 	mutex = wait(mutex);
-	full = wait(full);
-	empty = signal(empty);
-	printf("\nConsumer consumes item %d",x);
-	x--;
+	maximun = wait(maximun);
+	minimum = signal(minimum);
+	printf("\nConsumer consumes item %d",A);
+	A--;
 	mutex = signal(mutex);
 }
