@@ -1,5 +1,5 @@
 Problem 1: Bounded-buffer Producer/Consumer problem:
-...
+This program creates and consumes items from the buffer. the buffer is there to keep a fixed size amount on how much can be created or consummed. We use a mutex to allow how many entries can be entered or exiting at once.
 
 Excecution:
 This allows the user to either create an item or remove an item. if an item hasn't been created then a messaged will show up saying that there is no item inside the buffer and vise versa for the consumer.
