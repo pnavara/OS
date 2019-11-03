@@ -1,3 +1,7 @@
+/*
+This program shows the daily assigned task of the mother and father taking care of 12 children.
+Author: Pabasara Navaratne
+*/
 #include<stdio.h>
 #include<semaphore.h>
 #include<pthread.h>
